@@ -13,8 +13,9 @@ app.service("PeeService", ["$http", function($http){
         var id = name._id;
         console.log(id);
         return $http.put("http://localhost:8080/people/"+id, name).then(function(response){
+            console.log(response.data)
+            });
             return response.data
-        })
     }
     
     this.addPeeple = function(name){

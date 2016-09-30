@@ -9,26 +9,27 @@ app.controller("MainController", ["$scope", "PeeService", function($scope, PeeSe
     
     $scope.getPeeple = function(){
         PeeService.getPeeple().then(function(response){
-            console.log(response);
-            $scope.people.push(response);
+            var sortedPeople = response.sort(function(obj1, obj2){
+                return obj2.peeCount - obj1.peeCount;
+            })
+            $scope.people.push(sortedPeople);
         })
     };
     
-    $scope.sortPeople = function(groupOfPeople){
-        
-    }
+    
     
     $scope.incrementPee=function(name){
         PeeService.incrementPee(name).then(function(response){
             $scope.people.push(response);
-        })
+            $scope.getPeeple();
+        });
     }
     
     $scope.addPee=function(name){
         var tempObj = new $scope.PeePerson(name);
         PeeService.addPeeple(tempObj).then(function(response){
-            $scope.newName = '';
             alert("Thanks for peeing in the shower.");
+            $scope.getPeeple();
         });
     };
     

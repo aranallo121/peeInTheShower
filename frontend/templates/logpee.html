@@ -55,7 +55,7 @@
                    
                     <select ng-model="selectedName" class="form-control" ng-options="person.name for person in people[0]"></select>
                     <h3>{{selectedName.name}} Peed in the Shower!</h3>
-                    <button ng-click="incrementPee(selectedName)" class="btn-block btn-warning">FLUSH</button>
+                    <button ng-click="incrementPee(selectedName)" class="btn-block btn-warning" on-click="window.location.reload();">FLUSH</button>
                 </div>
             </div>
         </div>
