@@ -1,0 +1,83 @@
+<div class="container log-pee">
+    <section class="module parallax parallax-1">
+      <div class="container">
+        <h1>PEE IN THE SHOWER?!</h1>
+      </div>
+    </section>
+    <section class="module content">
+      <div class="container">
+        <h2>Why would you advocate shower desicration?</h2>
+        <p>First, because it's fun.</p>
+        <p>Second, much of the western US is in sever drought conditions. We all need to do our part to keep from going dry. Thats where peeing in the shower can help</p>
+        <p>Each time you drain the main vein, your toilet liquid is made up of about 95% good ol' H20 and about 5% urine. That means you're flushing about 5L of water. </p>
+        <p>You're in the shower anyway. You might as well whiz along with the water you're already draining. </p>
+          <h2>If you wanna wee</h2>(in the shower), <h2>We wanna see.</h2>
+      </div>
+    </section>
+    <section class="module parallax parallax-2">
+      <div class="container">
+        <h1>ADD YOUR PEE</h1>
+      </div>
+    </section>
+    <section class="module content">
+      <div class="container">
+        <h2>I'll be no accident when you wiz you way to the top of our "Pee-der board".</h2>
+        <h4>Select your experience level:</h4>
+      </div>
+    </section>
+    <div class="row">
+        <div class="col-sm-3"></div>
+        <div class="col-xs-12 col-sm-6">
+            <div class="row">
+                <div class="col-xs-6">
+                    <h1>
+                        <a ng-hide="peeFormVisible==true" ng-click="addFormVisible = !addFormVisible">New to the Cause?</a>
+                    </h1>
+                </div>
+                <div class="col-xs-6">
+                    <h1>
+                        <a ng-hide="addFormVisible==true" ng-click="peeFormVisible = !peeFormVisible">Experienced Whiz Kid?</a>
+                    </h1>
+                </div>
+            </div>
+            <div class="row" style="min-height: 200px">
+               <!----Allows adding a new Pee'r-->
+                <div class="col-xs-12" ng-if="addFormVisible">
+                    <h3>Add Your Info Here</h3>
+                    <div class="input-group">
+                        <input type="text" ng-model="newName" class="form-control">
+                        <span class="input-group-btn">
+                        <button class="btn btn-secondary" type="button" ng-click="addPee(newName)" >Gotta Go!</button>
+                    </div>
+                </div>
+                <!--Allows existing pee'r to add pee-->
+                <div class="col-xs-12" ng-if="peeFormVisible">
+                   
+                    <select ng-model="selectedName" class="form-control" ng-options="person.name for person in people[0]"></select>
+                    <h3>{{selectedName.name}} Peed in the Shower!</h3>
+                    <button ng-click="incrementPee(selectedName)" class="btn-block btn-warning">FLUSH</button>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-3"></div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12">
+            <a href="#leader" du-smooth-scroll ui-sref="leader" ui-sref-active="active">LeaderBoard</a>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,37 @@
+<div id="leader" class="container leader-board">
+    <section class="module parallax parallax-3">
+        <div class="container">
+            <h1>Leader Board</h1>
+        </div>
+    </section>
+    <section class="module content">
+        <div class="container" style="height:100vh">
+            <h2>MVPee's</h2>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Flushes</th>
+                        <th>Gallons Saved</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="person in people[0]">
+                        <td>{{person.name}}</td>
+                        <td>{{person.peeCount}}</td>
+                        <td>{{person.peeCount*1.6}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="row">
+            <div class="col-xs-12">
+                <h3>
+                    <a href="#" du-smooth-scroll ui-sref="" ui-sref-active="active">
+                    Back
+                    </a>
+                </h3>
+            </div>
+        </div>
+    </section>
+</div>
