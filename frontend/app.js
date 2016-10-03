@@ -1,6 +1,6 @@
 var app= angular.module("MainApp", ["ui.router"]);
 
-app.controller("MainController", ["$scope", "PeeService", function($scope, PeeService){
+app.controller("MainController", ["$scope", "$location", "PeeService", function($scope, $location, PeeService){
     $scope.people=[];
     $scope.addFormVisible=false;
     $scope.peeFormVisible=false;
@@ -21,6 +21,8 @@ app.controller("MainController", ["$scope", "PeeService", function($scope, PeeSe
     $scope.incrementPee=function(name){
         PeeService.incrementPee(name).then(function(response){
             $scope.people.push(response);
+            window.location.reload();
+            $location.path("leader");
             $scope.getPeeple();
         });
     }
@@ -29,7 +31,9 @@ app.controller("MainController", ["$scope", "PeeService", function($scope, PeeSe
         var tempObj = new $scope.PeePerson(name);
         PeeService.addPeeple(tempObj).then(function(response){
             alert("Thanks for peeing in the shower.");
+            window.location.reload();
             $scope.getPeeple();
+            $location.path("leader");
         });
     };
     
@@ -37,7 +41,6 @@ app.controller("MainController", ["$scope", "PeeService", function($scope, PeeSe
         this.name = name;
         this.peeCount = 1;
     };
-    
     
     $scope.getPeeple();
     
@@ -55,7 +58,7 @@ app.config(function($stateProvider){
         name: "leader",
         url: "/leader",
         templateUrl: "./templates/leader.html"
-    }
+    };
     
     $stateProvider.state(mainState);
     $stateProvider.state(leaderState);
