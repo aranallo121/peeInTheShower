@@ -19,6 +19,7 @@
         <h1>ADD YOUR PEE</h1>
       </div>
     </section>
+<!----container holding site functionality to add or increment pee-->
     <section class="module content">
       <div class="container">
         <h2>I'll be no accident when you wiz you way to the top of our "Pee-der board".</h2>
@@ -29,6 +30,7 @@
         <div class="col-sm-3"></div>
         <div class="col-xs-12 col-sm-6">
             <div class="row">
+<!------two buttons with the option to add or increment--->
                 <div class="col-xs-6">
                     <h1>
                         <a ng-hide="peeFormVisible==true" ng-click="addFormVisible = !addFormVisible">New to the Cause?</a>
@@ -41,7 +43,7 @@
                 </div>
             </div>
             <div class="row" style="min-height: 200px">
-               <!----Allows adding a new Pee'r-->
+<!------------Allows adding a new Pee'r---------------------->
                 <div class="col-xs-12" ng-if="addFormVisible">
                     <h3>Add Your Info Here</h3>
                     <div class="input-group">
@@ -50,7 +52,7 @@
                         <button class="btn btn-secondary" type="button" ng-click="addPee(newName)" >Gotta Go!</button>
                     </div>
                 </div>
-                <!--Allows existing pee'r to add pee-->
+<!-----------Allows existing pee'r to add pee-------------->
                 <div class="col-xs-12" ng-if="peeFormVisible">
                    
                     <select ng-model="selectedName" class="form-control" ng-options="person.name for person in people[0]"></select>
