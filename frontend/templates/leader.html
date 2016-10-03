@@ -20,7 +20,7 @@
                         <td>{{person.name}}</td>
                         <td>{{person.peeCount}}</td>
 <!----Inject peeCount but multiply by 1.6 to get gallons flushed---> 
-                        <td>{{person.peeCount*1.6}}</td>
+                        <td>{{person.peeCount | gallons}}</td>
                     </tr>
                 </tbody>
             </table>
